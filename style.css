@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* HERO BACKGROUND */
+.hero {
+  height: 100vh;
+  background-image: url("building.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+}
+
+/* CONTENT */
+.content {
+  padding: 60px;
+  max-width: 700px;
+}
+
+.tag {
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.primary {
+  background: #f4d35e;
+  color: #000;
+}
+
+.outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* FOOTER TEXT */
+.footer-text {
+  font-size: 14px;
+  margin-top: 60px;
+}
+
+/* =========================
+   HIRED PAGE DESIGN
+========================= */
+
+.hired-page {
+  min-height: 100vh;
+  background-image: url("andre.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.hired-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 60px 50px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+
+  /* IMPORTANT FIX */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hired-card .icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hired-card h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hired-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.hired-card .btn {
+  padding: 14px 36px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
