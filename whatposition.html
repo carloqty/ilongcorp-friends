@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Position</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #534848;
+      color: rgb(187, 160, 160);
+      font-family: Arial;
+      text-align: center;
+    }
+
+    .box {
+      max-width: 600px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+    .jobs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .jobs a {
+      padding: 12px 20px;
+      border-radius: 25px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .jobs a:hover {
+      background: #00ffd5;
+      transform: scale(1.05);
+    }
+
+    .back {
+      margin-top: 30px;
+      display: inline-block;
+      color: #fcf9f9;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>What position are you applying for?</h1>
+
+    <div class="jobs">
+      <a href="manager.html">Manager</a>
+      <a href="#">Team Leader</a>
+      <a href="#">Customer Service Representative</a>
+      <a href="#">IT</a>
+      <a href="#">HR</a>
+      <a href="#">Finance</a>
+      <a href="#">Quality Analyst</a>
+    </div>
+
+    <a href="index.html" class="back">← Back to Home</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <style>
+    body {
+      background: #575f64;
+      color: rgb(252, 247, 247);
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+   .quiz-box {
+  max-width: 600px;
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+   ;
+
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .choices button:hover {
+      background: #00ffd5;
+      color: black;
+    }
+
+    .result {
+      font-size: 22px;
+      margin-top: 20px;
+
+      
+
+      
+
+    }
+  </style>
+</head>
+
+<body>
+<div class="quiz-box">
+
+  <!-- TOP TITLE -->
+<h1 class="manager-title">Manager Assessment</h1>
+
+  <!-- QUESTION -->
+  <h2 id="question">Question here</h2>
+
+  <!-- CHOICES -->
+  <div class="choices">
+    <button onclick="answer(0)">Choice A</button>
+    <button onclick="answer(1)">Choice B</button>
+    <button onclick="answer(2)">Choice C</button>
+    <button onclick="answer(3)">Choice D</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result"></div>
+
+  <!-- BOTTOM BACK BUTTON -->
+  <a href="index.html" class="surrender-btn">← YAWA DINAKO OI</a>
+
+</div>
+
+<script>
+  const questions = [
+    {
+      q: "How should a manager handle an underperforming employee?",
+      choices: [
+        "Ignore the issue",
+        "Give immediate punishment",
+        "Provide coaching and feedback",
+        "Report directly to HR"
+      ],
+      correct: 2
+    },
+    {
+      q: "What is the most important role of a manager?",
+      choices: [
+        "Micromanage employees",
+        "Meet company targets",
+        "Support and guide the team",
+        "Only report problems"
+      ],
+      correct: 2
+    },
+    {
+      q: "How do you handle team conflict?",
+      choices: [
+        "Let them solve it themselves",
+        "Take sides",
+        "Ignore it",
+        "Listen to both sides and mediate"
+      ],
+      correct: 3
+    },
+    {
+      q: "Which skill is MOST important for a manager?",
+      choices: [
+        "Communication",
+        "Typing speed",
+        "Gaming skills",
+        "Social media"
+      ],
+      correct: 0
+    },
+    {
+      q: "What should a manager do under pressure?",
+      choices: [
+        "Panic",
+        "Blame others",
+        "Stay calm and prioritize tasks",
+        "Leave the situation"
+      ],
+      correct: 2
+    }
+  ];
+
+  let current = 0;
+  let score = 0;
+
+  function loadQuestion() {
+    document.getElementById("question").innerText = questions[current].q;
+    const buttons = document.querySelectorAll(".choices button");
+    buttons.forEach((btn, i) => {
+      btn.innerText = questions[current].choices[i];
+    });
+  }
+
+  function answer(choice) {
+    if (choice === questions[current].correct) {
+      score++;
+    }
+
+    current++;
+
+    if (current < questions.length) {
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    let message = "";
+
+    if (score === 5) {
+      message = "🔥 LETSGOOOOOOOOOOO KAYATA PERFECT SCORE ANG BUANG.";
+    } else if (score >= 3) {
+      message = "👍 SAKTO RA BAI 3 RA ISKOR.";
+    } else {
+      message = "⚠ BUGUAS AMAW OY NAZERO MAN HAHAHAHAH.";
+    }
+
+    document.querySelector(".choices").style.display = "none";
+    document.getElementById("question").innerText = "Assessment Result";
+    document.getElementById("result").innerText =
+      `${message}\n\nScore: ${score}/5`;
+  }
+
+  loadQuestion();
+</script>
+
+</body>
+</html>
